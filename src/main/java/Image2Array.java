@@ -1,6 +1,5 @@
-import javax.imageio.ImageIO;
+
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -12,7 +11,7 @@ public class Image2Array {
     private static int[][] transcodedArray;
     public static void processImage(String imgPath){
         try {
-            BufferedImage img = ImageIO.read(new File(imgPath));
+            BufferedImage img = Imaging.getBufferedImageFromPng(imgPath);
             int width = img.getWidth();
             int height = img.getHeight();
             pixelArray = new int[height][width];
