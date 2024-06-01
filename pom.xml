@@ -20,11 +20,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/commons-imaging-1.0.0-alpha5.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>org.braydenleung-Git</groupId>
-            <artifactId>ShapeDetector</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
