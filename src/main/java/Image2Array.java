@@ -1,7 +1,8 @@
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import "/libs "
+import org.apache.commons.imaging.Imaging;
+
 /**
  * This class is used to interpret a specified image to an array
  */
