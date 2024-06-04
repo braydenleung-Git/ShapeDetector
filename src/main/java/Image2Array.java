@@ -1,5 +1,3 @@
-//import org.apache.commons.imaging.Imaging;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -12,10 +10,10 @@ public class Image2Array {
     private static int[][] pixelArray;
     private static int[][] transcodedArray;
 
-    public static void processImage(/*String imgPath*/) {
+    public static void processImage(String imgPath) {
         try {
-            //BufferedImage img = Imaging.getBufferedImage(new File(imgPath)); // not working
-            BufferedImage img = ImageIO.read(Image2Array.class.getResourceAsStream("/test 1.png"));
+            //BufferedImage img = Imaging.getBufferedImage(Image2Array.class.getResourceAsStream(imgPath)); // not working
+            BufferedImage img = ImageIO.read(Image2Array.class.getResourceAsStream(imgPath));
             int width = img.getWidth();
             int height = img.getHeight();
             pixelArray = new int[height][width];
