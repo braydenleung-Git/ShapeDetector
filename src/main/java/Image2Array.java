@@ -1,6 +1,7 @@
-import org.apache.commons.imaging.Imaging;
+//import org.apache.commons.imaging.Imaging;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -11,9 +12,10 @@ public class Image2Array {
     private static int[][] pixelArray;
     private static int[][] transcodedArray;
 
-    public static void processImage(String imgPath) {
+    public static void processImage(/*String imgPath*/) {
         try {
-            BufferedImage img = Imaging.getBufferedImage(new File(imgPath));
+            //BufferedImage img = Imaging.getBufferedImage(new File(imgPath)); // not working
+            BufferedImage img = ImageIO.read(Image2Array.class.getResourceAsStream("/test 1.png"));
             int width = img.getWidth();
             int height = img.getHeight();
             pixelArray = new int[height][width];
@@ -33,7 +35,7 @@ public class Image2Array {
     }
 
     private static void transcodeArray(int y, int x) {
-        int current = 0;
+        int current;
         for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++) {
                 current = pixelArray[i][j];
