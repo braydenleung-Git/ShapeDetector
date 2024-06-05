@@ -1,12 +1,23 @@
+import java.util.Arrays;
+
 public class i2atest {
     public static void main(String[] args) {
-        Image2Array.processImage("src/main/resources/test 1.psd");
-        int[][] array = Image2Array.getTranscodedArray();
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        Image2Array.processImage("./Rectangle.png");
+        int[][] pixels = Image2Array.getTranscodedArray();
+
+        int[] ar = shapelogic.findpixel(pixels);
+        System.out.println(Arrays.toString(ar));
+        int[][] shape = shapelogic.returnShape(pixels, ar);
+        System.out.println(shape.length);//y
+        System.out.println(shape[0].length);//x
+
+        System.out.println(shapelogic.rectangleorsquare(shape));
+        /*
+        for (int i = 0; i < pixels.length; i++) {
+            for (int j = 0; j < pixels[i].length; j++) {
+                System.out.print(pixels[i][j] + " ");
             }
             System.out.println();
-        }
+        }*/
     }
 }
