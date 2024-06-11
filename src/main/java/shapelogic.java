@@ -1,5 +1,6 @@
 import java.util.*;
 public class shapelogic {
+    /*
     public static void main(String[] args){
     //public static void start(){
         int[][] pixels = {//0 is for white and 1 is for black
@@ -21,6 +22,20 @@ public class shapelogic {
 
         fourshape(shape);
         //System.out.println(triangle(shape));
+    }
+
+     */
+    public static void shapel(int pixels[][]){
+        int[] ar = findpixel(pixels);
+        System.out.println(Arrays.toString(ar));
+        int[][] shape = returnothershape(pixels, ar);
+        //printarray(shape);
+        printarray(shape);
+        System.out.println();
+        shape = trim(shape);
+        printarray(shape);
+
+        fourshape(shape);
     }
     public static int[] findpixel(int[][] parray){
         for (int y = 0; y < parray.length; y ++){

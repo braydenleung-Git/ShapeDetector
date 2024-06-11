@@ -1,0 +1,2 @@
+- start menu
+- drag and drop -> copy & read file path --> access file locally (need system permission if full file path?)
