@@ -1,0 +1,11 @@
+Start menu
+- start
+- title
+- prompt to copy/import file path
+- ask if user is using a psd or image (error message)
+Loop App
+- "Do again?" -> choose
+End Menu
+- combined with loop
+
+

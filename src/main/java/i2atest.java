@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class i2atest {
     public static void main(String[] args) {
-        Image2Array.processImage("./Rectangle.png");
+        Image2Array.processImage("TestCases/Rectangle.png");
         int[][] pixels = Image2Array.getTranscodedArray();
 
         int[] ar = shapelogic.findpixel(pixels);
