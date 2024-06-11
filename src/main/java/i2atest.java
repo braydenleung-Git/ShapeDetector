@@ -15,3 +15,10 @@ public class i2atest {
         shapelogic.shapel(Image2Array.getTranscodedArray());
     }
 }
+/*
+Image2Array.processImage("./Rectangle.png");
+transcoded array
+find pixel
+return shape
+test case
+ */
