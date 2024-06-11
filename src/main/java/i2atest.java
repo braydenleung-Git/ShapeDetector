@@ -1,23 +1,14 @@
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class i2atest {
-    public static void main(String[] args) {
-        Image2Array.processImage("TestCases/Rectangle.png");
-        int[][] pixels = Image2Array.getTranscodedArray();
-
-        int[] ar = shapelogic.findpixel(pixels);
-        System.out.println(Arrays.toString(ar));
-        int[][] shape = shapelogic.returnShape(pixels, ar);
-        System.out.println(shape.length);//y
-        System.out.println(shape[0].length);//x
-
-        System.out.println(shapelogic.rectangleorsquare(shape));
-        /*
-        for (int i = 0; i < pixels.length; i++) {
-            for (int j = 0; j < pixels[i].length; j++) {
-                System.out.print(pixels[i][j] + " ");
-            }
-            System.out.println();
-        }*/
+    public static void main(String[] args) throws IOException {
+        testCases.writeToJson();
+        System.out.println("Which file would you like to see?");
+        for (int i = 0; i < testCases.getItemList().size(); i++) {
+            System.out.println(testCases.getItemList().get(i));
+        }
+        int input = Integer.parseInt(new Scanner(System.in).nextLine());
+        System.out.println(testCases.getItem(input));
     }
 }
