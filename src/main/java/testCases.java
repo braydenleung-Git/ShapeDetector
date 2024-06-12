@@ -74,8 +74,10 @@ public class testCases {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(directory);
         ArrayList<String> listOfTestFile = new ArrayList<>();
+        int counter = 1;
         for(JsonNode currentNode: rootNode){
-            listOfTestFile.add(currentNode.get("Name").asText());
+            listOfTestFile.add(counter+". "+ currentNode.get("Name").asText());
+            counter++;
         }
         return listOfTestFile;
     }
