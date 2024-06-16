@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/*
+TODO:
+- Flash red when the user tried to type something without a prompt
+ */
 public class testCaseGUI {
     //This is only used by console, but this would allow the control over the start and stopping of the thread
     public static Thread consoleThread;
@@ -81,11 +85,11 @@ public class testCaseGUI {
                 @Override
                 public void keyPressed(KeyEvent e) {
                     /*
-                         Order of operations:
-                            - Enter key
-                            - Check whether an input was requested
-                            - if yes, print to console, and accept input
-                            - else, do nothing
+                     Order of operations:
+                        - Enter key
+                        - Check whether an input was requested
+                        - if yes, print to console, and accept input
+                        - else, do nothing
                      */
                     if(e.getKeyCode()== KeyEvent.VK_ENTER){
                         if (triggerPrompt) {
