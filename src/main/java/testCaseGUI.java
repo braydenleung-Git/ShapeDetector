@@ -15,8 +15,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /*
-TODO:
-- Flash red when the user tried to type something without a prompt
+TODO: Flash red when the user tried to type something without a prompt
  */
 public class testCaseGUI {
     //This is only used by console, but this would allow the control over the start and stopping of the thread
