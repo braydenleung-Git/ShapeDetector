@@ -28,7 +28,6 @@ public class guiReference {
     public static Dimension console_frame_Size = new Dimension();
     public static Dimension titlescreen_frame_Size = new Dimension();
     public static JTextField console_Input = new JTextField();
-
     public static JTextPane console_Output = new JTextPane();
 
     //Font library, Each font variable must be declared with public visibility first
@@ -185,10 +184,8 @@ public class guiReference {
         });
         System.setOut(output);
         System.setErr(output);
-
+        //console_frame_Size is a dimension object
         console_frame_Size.setSize(screenSize.getWidth(), (screenSize.getHeight() - 25));
-
-
         JScrollPane console_Output_Scroll = new JScrollPane(console_Output);
         console_Output_Scroll.setBackground(Color.BLACK);
         console_Layout.add(console_Output_Scroll, BorderLayout.CENTER);
@@ -196,7 +193,7 @@ public class guiReference {
 
         //This creates a new thread so that, when the action is triggered,
         //guiReference.lock.wait(); will not wait the same thread this listener is set on,
-        //preventing the gui to froze
+        //preventing the gui to freeze
         new Thread(() -> {
             //System.out.println("1");
             //Set up console input to the text field
