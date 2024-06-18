@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Rectangle",
+    "FileName": "Rectangle.png",
+    "Path": "TestCases/Rectangle.png"
+  },
+  {
+    "Name": "Square",
+    "FileName": "Square.png",
+    "Path": "TestCases/Square.png"
+  },
+  {
+    "Name": "Circle",
+    "FileName": "Circle.png",
+    "Path": "TestCases/Circle.png"
+  },
+  {
+    "Name": "Triangle",
+    "FileName": "Triangle.png",
+    "Path": "TestCases/Triangle.png"
+  }
+]

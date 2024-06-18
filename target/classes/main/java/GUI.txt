@@ -140,8 +140,8 @@ public class GUI {
                 //System.out.println("test");
                 //Note: if the application freeze, causation is from extended-state of the frame, run the extended within the game class to resolve
             }).start();
-            Thread Game_T = new Thread(Game::run_Game);
-            Game_T.start();
+            //Thread Game_T = new Thread(Game::run_Game);
+            //Game_T.start();
         });
 
 

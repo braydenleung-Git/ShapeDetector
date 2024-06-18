@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="fasterxml.jackson.module.jaxb.annotations" type="repository">
+    <properties maven-id="com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.14.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jackson-module-jaxb-annotations-2.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.xml.bind-api-2.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.activation-api-1.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/jackson-module-jaxb-annotations-2.14.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.14.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.14.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.14.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.xml.bind-api-2.3.3-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.activation-api-1.2.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
