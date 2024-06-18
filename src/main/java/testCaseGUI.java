@@ -15,7 +15,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /*
-TODO: Flash red when the user tried to type something without a prompt
+
  */
 public class testCaseGUI {
     //This is only used by console, but this would allow the control over the start and stopping of the thread
@@ -77,6 +77,7 @@ public class testCaseGUI {
         consoleThread = new Thread(() -> {
             //TL:DR, it reads input, and sends it to the console
             input.addKeyListener(new KeyListener() {
+                boolean listenFor = true;
                 @Override
                 public void keyTyped(KeyEvent e) {
 
@@ -90,12 +91,12 @@ public class testCaseGUI {
                         - if yes, print to console, and accept input
                         - else, do nothing
                      */
-                    if(e.getKeyCode()== KeyEvent.VK_ENTER){
+                    if(e.getKeyCode()== KeyEvent.VK_ENTER && listenFor){
                         if (triggerPrompt) {
                             try {
                                 //this mirrors the user input to console output
                                 uInput = input.getText();
-                                doc.insertString(doc.getLength(),"\n" + input.getText(), normal_Text);
+                                doc.insertString(doc.getLength(),"\n" + uInput, normal_Text);
                             } catch (BadLocationException a) {
                                 throw new RuntimeException(a);
                             }
@@ -112,6 +113,21 @@ public class testCaseGUI {
                                 }
                             }
                         }
+                        else {
+                            input.setBackground(Color.RED);
+                            input.setForeground(Color.WHITE);
+                            input.paint(input.getGraphics());
+                            listenFor = false;
+                            try{
+                                TimeUnit.MILLISECONDS.sleep(225);
+                                listenFor = true;
+                            } catch (InterruptedException interruptedException) {
+                                throw new RuntimeException(interruptedException);
+                            }
+                            input.setBackground(Color.WHITE);
+                            input.setForeground(Color.BLACK);
+                            input.paint(input.getGraphics());
+                        }
                     }
                 }
                 @Override
@@ -125,7 +141,35 @@ public class testCaseGUI {
         return input;
     }
 
-    private static String readLine(String question) throws InterruptedException {
+    static JTextPane setLogPanel(){
+        JTextPane log = new JTextPane();
+        log.setEditable(false);
+        StyledDocument doc = log.getStyledDocument();
+        log.setBackground(Color.BLACK);
+        //set the console output
+        PrintStream out = new PrintStream(new OutputStream() {
+            @Override
+            //this mirrors the user input to console output
+            public void write(@NotNull byte[] b, int off, int len) {
+                String text = new String(b, off, len, StandardCharsets.UTF_8);
+                try {
+                    doc.insertString(doc.getLength(), text, normal_Text);
+                } catch (BadLocationException e) {
+                    throw new RuntimeException(e);
+                }
+                // Automatically scroll down console
+                log.setCaretPosition(doc.getLength());
+            }
+            @Override
+            //this mirrors the user input to console output
+            public void write(int b) {
+                write(new byte[]{(byte) b}, 0, 1);
+            }
+        });
+        System.setErr(out);
+        return log;
+    }
+    public static String readLine(String question) throws InterruptedException {
         //Expected to run on Main-thread, instead of the consoleThread
         CountDownLatch latch =  new CountDownLatch(1);
         System.out.println(question);
@@ -134,6 +178,7 @@ public class testCaseGUI {
             while(uInput.isEmpty()){
                 TimeUnit.SECONDS.sleep(1);
             }
+            System.err.println("Latch moved");
             latch.countDown();
         }
         return uInput;
