@@ -44,7 +44,7 @@ public class StartMenu extends JFrame {
         new DropTarget(dnD, new FileDropTargetListener());
 
         // Image panel initialization
-        imagePanel = new ImagePanel("\u202AC:\\Users\\Judy\\Desktop\\image.png");
+        imagePanel = new ImagePanel("./image.png");
         imagePanel.setBounds(100, 150, 500, 300);
 
         // Placing components
