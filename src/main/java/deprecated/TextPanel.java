@@ -1,9 +1,11 @@
+package deprecated;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class TextPanel extends JFrame {
 
-    private JTextArea textArea;
+    private final JTextArea textArea;
 
     public TextPanel() {
         setTitle("Text Panel Example");

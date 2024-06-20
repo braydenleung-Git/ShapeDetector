@@ -1,9 +1,11 @@
+package deprecated;
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class ImageToArray {
+public class gptcode {
     public static void main(String[] args) {
         try {
             // Load the image
@@ -45,8 +47,4 @@ public class ImageToArray {
     }
 }
 
-
-
-
-
-==============================================================================
+//==============================================================================

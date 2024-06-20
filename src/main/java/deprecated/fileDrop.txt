@@ -1,3 +1,5 @@
+package deprecated;
+
 import javax.swing.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.dnd.DnDConstants;
@@ -7,7 +9,7 @@ import java.util.List;
 public class fileDrop {
 
     JTextArea myPanel = new JTextArea();
-myPanel.setDropTarget(new DropTarget() {
+    myPanel.setDropTarget(new DropTarget() {
         public synchronized void drop(DropTargetDropEvent evt) {
             try {
                 evt.acceptDrop(DnDConstants.ACTION_COPY);
