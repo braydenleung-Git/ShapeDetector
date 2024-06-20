@@ -2,7 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class i2atest {
+
+public class testingPlayGround_B {
     static final int width = 500;
     static final int height = 700;
         public static void main(String[] args) throws InterruptedException, IOException {
@@ -20,16 +21,15 @@ public class i2atest {
             f.setLocation((screenSize.width / 2) - (f.getWidth() / 2), (screenSize.height / 2) - (f.getHeight() / 2));
             f.setVisible(true);
             log.setVisible(true);
-            System.out.println(testCaseGUI.readLine("What would you like to test?"));
-        }
-}
-/*
             //Test json to sorting algorithm
-            testCases.writeToJson();
+            testCaseHandler.writeToJson();
             System.out.println("Which file would you like to see?");
-            for (int i = 0; i < testCases.getItemList().size(); i++) {
-                System.out.println(testCases.getItemList().get(i));
+            for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
+                System.out.println(testCaseHandler.getItemList().get(i));
             }
-            int input = Integer.parseInt(new Scanner(System.in).nextLine());
-            Image2Array.processImage(testCases.getItem(input).toString());
-            shapelogic.shapel(Image2Array.getTranscodedArray());*/
+            String uI = testCaseGUI.readLine("Enter number: ");
+            Image2Array.processImage(testCaseHandler.getItem(Integer.parseInt(uI)).toString());
+            shapelogic.shapel(Image2Array.getTranscodedArray());
+        }
+
+}

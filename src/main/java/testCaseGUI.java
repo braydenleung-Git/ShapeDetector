@@ -13,16 +13,16 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-
-/*
-
+/**
+ * @author braydenleung-Git
+ * This class is used to set up the GUI for the test case preset panel
  */
 public class testCaseGUI {
     //This is only used by console, but this would allow the control over the start and stopping of the thread
     public static Thread consoleThread;
     static final Object lock = new Object();
     static boolean triggerPrompt = false;
-    static String uInput;
+    static String uInput = "";
     static StyledDocument doc;
     static SimpleAttributeSet normal_Text;
 
@@ -40,6 +40,7 @@ public class testCaseGUI {
         panel.add(setupInputField(), BorderLayout.SOUTH);
         return panel;
     }
+
     static JScrollPane setupConsole(){
         JTextPane console = new JTextPane();
         console.setEditable(false);
@@ -72,6 +73,7 @@ public class testCaseGUI {
         scroll.setBackground(Color.BLACK);
         return scroll;
     }
+
     static JTextField setupInputField(){
         JTextField input = new JTextField();
         consoleThread = new Thread(() -> {
@@ -92,6 +94,7 @@ public class testCaseGUI {
                         - else, do nothing
                      */
                     if(e.getKeyCode()== KeyEvent.VK_ENTER && listenFor){
+                        uInput = "";
                         if (triggerPrompt) {
                             try {
                                 //this mirrors the user input to console output
@@ -101,16 +104,9 @@ public class testCaseGUI {
                                 throw new RuntimeException(a);
                             }
                             input.setText("");
-                            uInput = "";
                             synchronized(lock) {
-                                while(triggerPrompt){
-                                    try {
-                                        lock.wait();
-                                    } catch (InterruptedException interruptedException) {
-                                        throw new RuntimeException(interruptedException);
-                                    }
-                                    lock.notifyAll();
-                                }
+                                triggerPrompt = false;
+                                lock.notifyAll();
                             }
                         }
                         else {
@@ -169,19 +165,29 @@ public class testCaseGUI {
         System.setErr(out);
         return log;
     }
-    public static String readLine(String question) throws InterruptedException {
+
+    public static String readLine(String question) {
         //Expected to run on Main-thread, instead of the consoleThread
         CountDownLatch latch =  new CountDownLatch(1);
         System.out.println(question);
         synchronized(lock){
             triggerPrompt = true;
             while(uInput.isEmpty()){
-                TimeUnit.SECONDS.sleep(1);
+                try {
+                    lock.wait();
+                    System.err.println("Still sleeping");
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
             System.err.println("Latch moved");
             latch.countDown();
         }
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return uInput;
     }
-
 }

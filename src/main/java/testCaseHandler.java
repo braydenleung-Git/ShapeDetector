@@ -3,14 +3,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.module.kotlin.KotlinModule;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-public class testCases {
+
+/**
+ * @author braydenleung-Git
+ * This class is created to handle updating the testcase database and processing request towards access the database
+ */
+public class testCaseHandler {
     //set methods back to private later, there should have been something else calling it
     private final static String jsonFile = "./src/main/resources/testSolutions.json";
 
@@ -18,16 +22,12 @@ public class testCases {
         final String directoryPath = "./src/main/resources/TestCases";
         File directory = new File(directoryPath);
         List<String[]> newlyAddedFiles = new ArrayList<>();
-        List<String[]> probe = new ArrayList<>();
-        boolean probe_bool = false;
         File[] files = directory.listFiles();
         //for each file within the file array
-        probe_bool = files != null;
-        if(probe_bool){
+        if(files != null){
             for(File file : files){
                 //if the file has an extension of .png
                 if (file.getName().endsWith(".png")) {
-
                     //copy the relative path & file name(including extensions)
                     String relativePath = file.getAbsolutePath().substring(directoryPath.length() + 1);
                     String fileName = file.getName();
@@ -38,16 +38,14 @@ public class testCases {
         }
         try{
             ObjectMapper objectMapper = new ObjectMapper()
-                    .registerModule(new KotlinModule())
                     .enable(SerializationFeature.INDENT_OUTPUT);
             JsonNode rootNode = objectMapper.readTree(new FileInputStream(jsonFile));
             ArrayNode rootArrayNode = (ArrayNode) rootNode;
             boolean found = false;
             for (String[] filePathAndName : newlyAddedFiles) {
                 for(JsonNode node : rootNode){
-                    //if the current filename exist within the json mark it as "found"
-                    probe_bool = node.get("FileName").asText().equals(filePathAndName[1]);
-                    if (probe_bool){
+                    //if the current filename exists within the json mark it as "found"
+                    if (node.get("FileName").asText().equals(filePathAndName[1])){
                         found=true;
                         break;
                     }else{
@@ -69,15 +67,14 @@ public class testCases {
             throw new RuntimeException(e);
         }
     }
+
     public static ArrayList<String> getItemList() throws IOException {
         File directory = new File(jsonFile);
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(directory);
         ArrayList<String> listOfTestFile = new ArrayList<>();
-        int counter = 1;
         for(JsonNode currentNode: rootNode){
-            listOfTestFile.add(counter+". "+ currentNode.get("Name").asText());
-            counter++;
+            listOfTestFile.add(currentNode.get("Name").asText());
         }
         return listOfTestFile;
     }
