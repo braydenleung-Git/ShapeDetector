@@ -94,7 +94,6 @@ public class testCaseGUI {
                         - else, do nothing
                      */
                     if(e.getKeyCode()== KeyEvent.VK_ENTER && listenFor){
-                        uInput = "";
                         if (triggerPrompt) {
                             try {
                                 //this mirrors the user input to console output
@@ -137,50 +136,58 @@ public class testCaseGUI {
         return input;
     }
 
-    static JTextPane setLogPanel(){
-        JTextPane log = new JTextPane();
-        log.setEditable(false);
-        StyledDocument doc = log.getStyledDocument();
-        log.setBackground(Color.BLACK);
-        //set the console output
-        PrintStream out = new PrintStream(new OutputStream() {
-            @Override
-            //this mirrors the user input to console output
-            public void write(@NotNull byte[] b, int off, int len) {
-                String text = new String(b, off, len, StandardCharsets.UTF_8);
-                try {
-                    doc.insertString(doc.getLength(), text, normal_Text);
-                } catch (BadLocationException e) {
-                    throw new RuntimeException(e);
+    public static class LogPanel {
+        public static void setupLogPanel(int width, int height){
+            JTextPane log = new JTextPane();
+            log.setEditable(false);
+            StyledDocument doc = log.getStyledDocument();
+            log.setBackground(Color.BLACK);
+            //set the console output
+            PrintStream out = new PrintStream(new OutputStream() {
+                @Override
+                //this mirrors the user input to console output
+                public void write(@NotNull byte[] b, int off, int len) {
+                    String text = new String(b, off, len, StandardCharsets.UTF_8);
+                    try {
+                        doc.insertString(doc.getLength(), text, normal_Text);
+                    } catch (BadLocationException e) {
+                        throw new RuntimeException(e);
+                    }
+                    // Automatically scroll down console
+                    log.setCaretPosition(doc.getLength());
                 }
-                // Automatically scroll down console
-                log.setCaretPosition(doc.getLength());
-            }
-            @Override
-            //this mirrors the user input to console output
-            public void write(int b) {
-                write(new byte[]{(byte) b}, 0, 1);
-            }
-        });
-        System.setErr(out);
-        return log;
+                @Override
+                //this mirrors the user input to console output
+                public void write(int b) {
+                    write(new byte[]{(byte) b}, 0, 1);
+                }
+            });
+            System.setErr(out);
+            JFrame f = new JFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.add(log);
+            f.setSize(width,height);
+            f.setLocation(0,0);
+            f.setVisible(true);
+        }
     }
 
     public static String readLine(String question) {
         //Expected to run on Main-thread, instead of the consoleThread
         CountDownLatch latch =  new CountDownLatch(1);
-        System.out.println(question);
+        System.out.print(question);
         synchronized(lock){
             triggerPrompt = true;
+            uInput = "";
             while(uInput.isEmpty()){
                 try {
                     lock.wait();
-                    System.err.println("Still sleeping");
+                    //System.err.println("Still sleeping");
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
-            System.err.println("Latch moved");
+            //System.err.println("Latch moved");
             latch.countDown();
         }
         try {
@@ -188,6 +195,27 @@ public class testCaseGUI {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        System.out.println();
         return uInput;
+    }
+
+    public static int readInt(String question){
+        String output = readLine(question);
+        try{
+            return Integer.parseInt(output);
+        } catch (NumberFormatException e){
+            System.out.println("Unexpected input, please try again");
+            return readInt(question);
+        }
+    }
+
+    public static void flush(int l){
+        for (int i = 0; i < l; i++) {
+            System.out.println();
+        }
+    }
+
+    public static void flush(){
+        flush(100);
     }
 }

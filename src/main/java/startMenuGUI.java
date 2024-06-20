@@ -5,19 +5,15 @@ import java.awt.datatransfer.*;
 import java.io.File;
 import java.util.List;
 
-public class StartMenu extends JFrame {
+public class startMenuGUI extends JPanel{
+    //private JPanel imagePanel;
 
-    private JPanel imagePanel;
-
-    public StartMenu() {
+    public startMenuGUI() {
         // Basic settings
-        setTitle("Shape Identifier");
         setSize(400, 400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
 
         // Set background color of content pane
-        getContentPane().setBackground(Color.WHITE); // Default background color
+        setBackground(Color.WHITE); // Default background color
 
         JLabel title = new JLabel("Shape Identifier");
         title.setFont(new Font("Serif", Font.BOLD, 30));
@@ -28,7 +24,7 @@ public class StartMenu extends JFrame {
         // Making buttons
         JButton dnD = new JButton("Drag and Drop Your Files Here");
         dnD.setBounds(100, 200, 200, 40);
-        JButton testCase = new JButton("Test Case");
+        JButton testCase = testCaseGUI.setupButton();
         testCase.setBounds(100, 255, 200, 40);
         JButton colorPicker = new JButton("Pick Color");
         colorPicker.setBounds(100, 310, 200, 40);
@@ -44,35 +40,39 @@ public class StartMenu extends JFrame {
         new DropTarget(dnD, new FileDropTargetListener());
 
         // Image panel initialization
-        imagePanel = new ImagePanel("./image.png");
-        imagePanel.setBounds(100, 150, 500, 300);
+        //imagePanel = new ImagePanel("./image.png");
 
         // Placing components
         add(dnD);
         add(testCase);
         add(colorPicker);
         add(title);
-        add(imagePanel);
+        //add(imagePanel);
 
         // Add action listener to color picker button
         colorPicker.addActionListener(e -> pickColor());
-
-        // Ensure all components are visible
-        setVisible(true);
+        dnD.addActionListener(e -> browse());
     }
 
     // Method to handle color picking
-    private void pickColor() {
+    void pickColor() {
         Color selectedColor = JColorChooser.showDialog(this, "Choose Background Color", Color.WHITE);
         if (selectedColor != null) {
-            getContentPane().setBackground(selectedColor);
+            setBackground(selectedColor);
             // Repaint the frame to reflect the new background color
             repaint();
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new StartMenu());
+    void browse(){
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            //handle invalid file
+            //copy a shadow of the file to the program
+            //change the panel to console or smth to show file error
+        }
     }
 
     // Inner class to handle file drop
@@ -127,7 +127,7 @@ public class StartMenu extends JFrame {
 
     // Inner class for image panel
     private class ImagePanel extends JPanel {
-        private Image image;
+        private final Image image;
 
         public ImagePanel(String imagePath) {
             this.image = new ImageIcon(imagePath).getImage();
@@ -161,7 +161,7 @@ public class StartMenu extends JFrame {
                 // Draw the image with the new size
                 g.drawImage(image, x, y, newWidth, newHeight, this);
             } else {
-                System.out.println("Image is null and cannot be drawn.");
+                System.err.println("Image is null and cannot be drawn.");
             }
         }
     }

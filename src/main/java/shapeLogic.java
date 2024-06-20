@@ -1,5 +1,5 @@
 import java.util.*;
-public class shapelogic {
+public class shapeLogic {
     /*
     public static void main(String[] args){
     //public static void start(){
@@ -23,34 +23,30 @@ public class shapelogic {
         fourshape(shape);
         //System.out.println(triangle(shape));
     }
-
      */
-    public static void shapel(int pixels[][]){
-        int[] ar = findpixel(pixels);
-        System.out.println(Arrays.toString(ar));
-        int[][] shape = returnothershape(pixels, ar);
+    public static void shapeL(int[][] pixels){
+        int[] ar = findPixel(pixels);
+        //System.out.println(Arrays.toString(ar));
+        int[][] shape = returnOtherShape(pixels, ar);
         //printarray(shape);
-        printarray(shape);
-        System.out.println();
+        //System.out.println();
         shape = trim(shape);
-        printarray(shape);
-
-        fourshape(shape);
+        //printarray(shape);
+        fourShape(shape);
     }
-    public static int[] findpixel(int[][] parray){
+    public static int[] findPixel(int[][] parray){
         for (int y = 0; y < parray.length; y ++){
             for (int x = 0; x < parray[y].length; x ++){//looping through every element in the array
                 if (parray[y][x] == 1){//traverse from the black pixel
                     int[] coords = {y, x};
                     return coords;
-
                 }
-
             }
         }
         int[] coords = {0, 0};
         return coords;
     }
+
     public static int[][] returnShape(int[][] parray, int[] coords){
         int maxx = 0;
         int maxy = 0;
@@ -92,9 +88,9 @@ public class shapelogic {
         System.out.println(maxx);
         int[][] smaller = new int[maxy-coords[0]+1][maxx-coords[1]+1];//needs +1 because maxx is 0 indexed and lengths are 1 indexed
         for (int y = coords[0]; y < maxy+1; y ++) {//index 0 is y and index 1 is x
-            for (int x = coords[1]; x < maxx+1; x++) {//looping through every element in the array
-                smaller[y-coords[0]][x-coords[1]] = parray[y][x];
-            }
+            //looping through every element in the array
+            if (maxx + 1 - coords[1] >= 0)
+                System.arraycopy(parray[y], coords[1], smaller[y - coords[0]], coords[1] - coords[1], maxx + 1 - coords[1]);
         }
         for (int[] y : smaller){
             for (int x : y){
@@ -105,7 +101,7 @@ public class shapelogic {
         return smaller;
     }
 
-    public static int[][] returnmoreshape(int[][] parray, int[] coords) {//codium generated
+    public static int[][] returnMoreShape(int[][] parray, int[] coords) {//codium generated
         int minX = coords[1], maxX = coords[1];
         int minY = coords[0], maxY = coords[0];
 
@@ -124,9 +120,8 @@ public class shapelogic {
         // Create the smaller array
         int[][] smaller = new int[maxY - minY + 1][maxX - minX + 1];
         for (int y = minY; y <= maxY; y++) {
-            for (int x = minX; x <= maxX; x++) {
-                smaller[y - minY][x - minX] = parray[y][x];
-            }
+            if (maxX + 1 - minX >= 0)
+                System.arraycopy(parray[y], minX, smaller[y - minY], minX - minX, maxX + 1 - minX);
         }
 
         // Print the smaller array
@@ -135,7 +130,7 @@ public class shapelogic {
         return smaller;
     }
 
-    public static int[][] returnconnectedshape(int[][] parray, int[] coords){
+    public static int[][] returnConnectedShape(int[][] parray, int[] coords){
         int maxx = coords[1];
         int maxy = coords[0];
         ArrayList<Object> temp = new ArrayList<Object>();
@@ -161,7 +156,7 @@ public class shapelogic {
                             case 3:
                                 if (parray[y][x] == 1 & parray[y][x - 1] == 1){
                                     con = true;
-                                    if (locked != true){
+                                    if (!locked){
                                         locked = true;
                                         for (int i = x; i >= 0; i --){
                                             if (parray[y][x] == 1){
@@ -186,7 +181,7 @@ public class shapelogic {
                         //System.out.println(coords[1]);
                     }
                 }
-                if (con == true) smaller[y-coords[0]][x-coords[1]] = parray[y][x];
+                if (con) smaller[y-coords[0]][x-coords[1]] = parray[y][x];
                 //maxx += 1;
             }
             //maxy += 1;
@@ -194,7 +189,8 @@ public class shapelogic {
 
         return smaller;
     }
-    public static int[][] returnothershape(int[][] parray, int[] coords){
+
+    public static int[][] returnOtherShape(int[][] parray, int[] coords){
         int maxx = coords[1];
         int maxy = coords[0];
         ArrayList<Object> temp = new ArrayList<Object>();
@@ -205,11 +201,12 @@ public class shapelogic {
 
             boolean barrier = true;
             for (int j = coords[1]; j < parray[y].length; j ++){
-                if (parray[y][j] == 1){
+                if (parray[y][j] == 1) {
                     barrier = false;
+                    break;
                 }
             }
-            if (barrier == true){
+            if (barrier){
                 break;
             }
 
@@ -225,7 +222,8 @@ public class shapelogic {
 
         return smaller;
     }
-    public static void printarray(int[][] smaller){
+
+    public static void printArray(int[][] smaller){
         for (int[] row : smaller) {
             for (int val : row) {
                 System.out.print(val);
@@ -258,7 +256,7 @@ public class shapelogic {
         return shape;
     }
 
-    public static String squareorrectangle(int[][] shape){
+    public static String squareOrRectangle(int[][] shape){
         if (shape[0].length == shape.length){
             return "square";
         }
@@ -266,6 +264,7 @@ public class shapelogic {
             return "rectangle";
         }
     }
+
     public static boolean triangle(int[][] shape){
         for (int i = 0; i < shape.length; i ++){
             if (i > 0) {
@@ -281,14 +280,10 @@ public class shapelogic {
                 }
             }
         }
-        if (shape[0].length > shape[shape.length-1].length){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return shape[0].length > shape[shape.length - 1].length;
     }
-    public static void fourshape(int[][] shape){
+
+    public static void fourShape(int[][] shape){
         //System.out.println(shape[Math.ceilDiv(2, shape.length)].length);
         if (shape[0].length < shape[Math.ceilDiv(2, shape.length)].length & shape[Math.ceilDiv(2, shape.length)].length > shape[shape.length-1].length){
             System.out.println("Circle");
@@ -297,7 +292,7 @@ public class shapelogic {
             System.out.println("Triangle");
         }
         else{
-
+            /*
             System.out.println(shape[0].length);
             System.out.println(shape.length);
             for (int y = 0; y < shape.length; y ++){
@@ -305,8 +300,8 @@ public class shapelogic {
                     System.out.print(shape[y][x]);
                 }
                 System.out.println();
-            }
-            System.out.println(squareorrectangle(shape));
+            }*/
+            System.out.println(squareOrRectangle(shape));
         }
     }
 }
