@@ -1,13 +1,17 @@
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.dnd.*;
 import java.awt.datatransfer.*;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class StartMenu extends JFrame {
 
-    private JPanel imagePanel;
+    public static String path;
 
     public StartMenu() {
         // Basic settings
@@ -17,48 +21,89 @@ public class StartMenu extends JFrame {
         setLocationRelativeTo(null);
 
         // Set background color of content pane
-        getContentPane().setBackground(Color.WHITE); // Default background color
+        getContentPane().setBackground(Color.WHITE);
 
-        JLabel title = new JLabel("Shape Identifier");
-        title.setFont(new Font("Serif", Font.BOLD, 30));
+        //JLabel title = new JLabel("Shape Identifier");
+        //title.setFont(new Font("Serif", Font.BOLD, 30));
 
         // Setting layout to null for absolute positioning
         setLayout(null);
 
         // Making buttons
-        JButton dnD = new JButton("Drag and Drop Your Files Here");
+        JButton dnD = new JButton();//"Drag and Drop Your Files Here");
         dnD.setBounds(100, 200, 200, 40);
+
         JButton testCase = new JButton("Test Case");
         testCase.setBounds(100, 255, 200, 40);
+
         JButton colorPicker = new JButton("Pick Color");
         colorPicker.setBounds(100, 310, 200, 40);
+
+        //JLabel dnT = new JLabel("Drag and drop your files here");
+        //dnT.setBounds(100, 200, 200, 40);
+
         dnD.setFont(new Font("Serif", Font.BOLD, 12));
         testCase.setFont(new Font("Serif", Font.BOLD, 12));
         colorPicker.setFont(new Font("Serif", Font.BOLD, 12));
-        title.setBounds(100, 80, 500, 100);
+        //title.setBounds(100, 80, 500, 100);
 
         Color color = new Color(0, 0, 0);
-        title.setForeground(color);
+        //title.setForeground(color);
 
         // Add drop target to button
         new DropTarget(dnD, new FileDropTargetListener());
 
-        // Image panel initialization
-        imagePanel = new ImagePanel("./image.png");
-        imagePanel.setBounds(100, 150, 500, 300);
 
-        // Placing components
+        //adding images
+        InputStream imageStream = getClass().getResourceAsStream("/Shape.png"); // Load image from resources
+
+
+
+        if (imageStream != null) {
+            try {
+                Image image = ImageIO.read(imageStream);
+                ImageIcon icon = new ImageIcon(image.getScaledInstance(400, 100, Image.SCALE_SMOOTH));
+                JLabel gameIconTitleScreen = new JLabel(icon);
+                gameIconTitleScreen.setBounds(50, -20, 300, 300);
+                add(gameIconTitleScreen); // Add image to frame
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.err.println("Image not found.");
+        }
+
+        InputStream imageButton = getClass().getResourceAsStream("/image.png");
+        if (imageButton != null) {
+            try {
+                Image image = ImageIO.read(imageButton);
+                ImageIcon icon = new ImageIcon(image.getScaledInstance(400, 100, Image.SCALE_SMOOTH));
+                JLabel gameIconTitleScreen = new JLabel(icon);
+                dnD.setIcon(icon);
+                //gameIconTitleScreen.setBounds(50, -20, 300, 300);
+                add(gameIconTitleScreen); // Add image to frame
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.err.println("Image not found.");
+        }
+
+
+
         add(dnD);
         add(testCase);
         add(colorPicker);
-        add(title);
-        add(imagePanel);
 
         // Add action listener to color picker button
         colorPicker.addActionListener(e -> pickColor());
 
         // Ensure all components are visible
         setVisible(true);
+    }
+
+    public static String getPath(){
+        return path;
     }
 
     // Method to handle color picking
@@ -111,10 +156,15 @@ public class StartMenu extends JFrame {
                     List<File> droppedFiles = (List<File>) transferable.getTransferData(DataFlavor.javaFileListFlavor);
 
                     for (File file : droppedFiles) {
-                        System.out.println("Dropped file: " + file.getAbsolutePath());
-                        // You can add code here to handle the dropped files as needed
+                        //System.out.println("Dropped file: " + file.getAbsolutePath());
+                        path = file.getAbsolutePath();
+
                     }
                     dtde.dropComplete(true);
+                    FilePan filePanel = new FilePan(path);
+                    filePanel.setVisible(true);
+                    //Dispose();
+
                 } else {
                     dtde.rejectDrop();
                 }
@@ -123,46 +173,9 @@ public class StartMenu extends JFrame {
                 dtde.dropComplete(false);
             }
         }
+
+
     }
 
-    // Inner class for image panel
-    private class ImagePanel extends JPanel {
-        private Image image;
 
-        public ImagePanel(String imagePath) {
-            this.image = new ImageIcon(imagePath).getImage();
-        }
-
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            if (image != null) {
-                // Calculate the new size while maintaining the aspect ratio
-                int originalWidth = image.getWidth(this);
-                int originalHeight = image.getHeight(this);
-                int panelWidth = getWidth();
-                int panelHeight = getHeight();
-
-                double aspectRatio = (double) originalWidth / originalHeight;
-                int newWidth, newHeight;
-
-                if (panelWidth / aspectRatio <= panelHeight) {
-                    newWidth = panelWidth;
-                    newHeight = (int) (panelWidth / aspectRatio);
-                } else {
-                    newWidth = (int) (panelHeight * aspectRatio);
-                    newHeight = panelHeight;
-                }
-
-                // Center the image
-                int x = (panelWidth - newWidth) / 2;
-                int y = (panelHeight - newHeight) / 2;
-
-                // Draw the image with the new size
-                g.drawImage(image, x, y, newWidth, newHeight, this);
-            } else {
-                System.out.println("Image is null and cannot be drawn.");
-            }
-        }
     }
-}
