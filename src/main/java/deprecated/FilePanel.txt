@@ -1,3 +1,5 @@
+package deprecated;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -49,12 +51,12 @@ public class FilePanel extends JFrame {
 
 
 
-        String path = StartMenu.getPath();
+        String path = startMenuGUI.getPath();
 
 
         //adding images
         if(!(path == null)){
-            imageStream = getClass().getResourceAsStream(StartMenu.getPath());
+            imageStream = getClass().getResourceAsStream(startMenuGUI.getPath());
         }
         else{
             imageStream = getClass().getResourceAsStream("/Shape.png");

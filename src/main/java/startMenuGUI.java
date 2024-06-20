@@ -9,63 +9,53 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class StartMenu extends JFrame {
+public class startMenuGUI extends JPanel {
 
-    public static String path;
+    static String path;
 
-    public StartMenu() {
+    public startMenuGUI() {
         // Basic settings
-        setTitle("Shape Identifier");
-        setSize(400, 400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        setBackground(Color.WHITE);
+        this.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.weightx = 1.0;
+        constraints.weighty = 1.0;
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+        constraints.insets = new Insets(0, 80, 5, 80); // Set margin
 
-        // Set background color of content pane
-        getContentPane().setBackground(Color.WHITE);
-
-        //JLabel title = new JLabel("Shape Identifier");
-        //title.setFont(new Font("Serif", Font.BOLD, 30));
-
-        // Setting layout to null for absolute positioning
-        setLayout(null);
 
         // Making buttons
-        JButton dnD = new JButton();//"Drag and Drop Your Files Here");
-        dnD.setBounds(100, 200, 200, 40);
+        JButton dnD = new JButton(/*);*/"<html><center>Drag and Drop Your Files Here <br> Or Click to Browse Your File</center></html>");
+        dnD.setPreferredSize(new Dimension(40, 60));
 
-        JButton testCase = new JButton("Test Case");
-        testCase.setBounds(100, 255, 200, 40);
+        JButton testCase = testCaseGUI.setupButton();
+        testCase.setPreferredSize(new Dimension(40, 60));
 
         JButton colorPicker = new JButton("Pick Color");
-        colorPicker.setBounds(100, 310, 200, 40);
+        colorPicker.setPreferredSize(new Dimension( 40, 60));
 
-        //JLabel dnT = new JLabel("Drag and drop your files here");
-        //dnT.setBounds(100, 200, 200, 40);
-
-        dnD.setFont(new Font("Serif", Font.BOLD, 12));
-        testCase.setFont(new Font("Serif", Font.BOLD, 12));
-        colorPicker.setFont(new Font("Serif", Font.BOLD, 12));
-        //title.setBounds(100, 80, 500, 100);
-
-        Color color = new Color(0, 0, 0);
-        //title.setForeground(color);
+        dnD.setFont(new Font("Serif", Font.BOLD, 14));
+        testCase.setFont(new Font("Serif", Font.BOLD, 30));
+        colorPicker.setFont(new Font("Serif", Font.BOLD, 30));
 
         // Add drop target to button
         new DropTarget(dnD, new FileDropTargetListener());
 
-
         //adding images
         InputStream imageStream = getClass().getResourceAsStream("/Shape.png"); // Load image from resources
-
-
 
         if (imageStream != null) {
             try {
                 Image image = ImageIO.read(imageStream);
-                ImageIcon icon = new ImageIcon(image.getScaledInstance(400, 100, Image.SCALE_SMOOTH));
+                ImageIcon icon = new ImageIcon(image.getScaledInstance(450, 125, Image.SCALE_SMOOTH));
                 JLabel gameIconTitleScreen = new JLabel(icon);
-                gameIconTitleScreen.setBounds(50, -20, 300, 300);
-                add(gameIconTitleScreen); // Add image to frame
+                gameIconTitleScreen.setPreferredSize(new Dimension(400, 100));
+                add(gameIconTitleScreen);// Add image to frame
+                constraints.gridy = 1;
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -79,9 +69,9 @@ public class StartMenu extends JFrame {
                 Image image = ImageIO.read(imageButton);
                 ImageIcon icon = new ImageIcon(image.getScaledInstance(400, 100, Image.SCALE_SMOOTH));
                 JLabel gameIconTitleScreen = new JLabel(icon);
-                dnD.setIcon(icon);
+                //dnD.setIcon(icon);
                 //gameIconTitleScreen.setBounds(50, -20, 300, 300);
-                add(gameIconTitleScreen); // Add image to frame
+                //add(gameIconTitleScreen); // Add image to frame
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -89,17 +79,17 @@ public class StartMenu extends JFrame {
             System.err.println("Image not found.");
         }
 
+        add(dnD, constraints);
+        constraints.gridy = 2;
+        add(testCase, constraints);
+        constraints.gridy = 3;
+        add(colorPicker, constraints);
+        constraints.gridy = 4;
 
-
-        add(dnD);
-        add(testCase);
-        add(colorPicker);
 
         // Add action listener to color picker button
         colorPicker.addActionListener(e -> pickColor());
-
-        // Ensure all components are visible
-        setVisible(true);
+        dnD.addActionListener(e->browse());
     }
 
     public static String getPath(){
@@ -110,14 +100,20 @@ public class StartMenu extends JFrame {
     private void pickColor() {
         Color selectedColor = JColorChooser.showDialog(this, "Choose Background Color", Color.WHITE);
         if (selectedColor != null) {
-            getContentPane().setBackground(selectedColor);
+            setBackground(selectedColor);
             // Repaint the frame to reflect the new background color
             repaint();
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new StartMenu());
+    // Method to handle file browser
+    private void browse(){
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            path = selectedFile.getAbsolutePath();
+        }
     }
 
     // Inner class to handle file drop
@@ -156,15 +152,11 @@ public class StartMenu extends JFrame {
                     List<File> droppedFiles = (List<File>) transferable.getTransferData(DataFlavor.javaFileListFlavor);
 
                     for (File file : droppedFiles) {
-                        //System.out.println("Dropped file: " + file.getAbsolutePath());
+                        System.err.println("Dropped file: " + file.getAbsolutePath());
                         path = file.getAbsolutePath();
-
                     }
                     dtde.dropComplete(true);
-                    FilePan filePanel = new FilePan(path);
-                    filePanel.setVisible(true);
-                    //Dispose();
-
+                    main.changeLayout(400,400,"Output Panel");
                 } else {
                     dtde.rejectDrop();
                 }
@@ -173,9 +165,5 @@ public class StartMenu extends JFrame {
                 dtde.dropComplete(false);
             }
         }
-
-
     }
-
-
-    }
+}

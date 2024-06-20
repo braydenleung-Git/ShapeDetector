@@ -29,6 +29,9 @@ public class testCaseGUI {
     public static JButton setupButton(){
         JButton button =  new JButton();
         button.setText("Test Presets");
+        button.addActionListener(e->{
+            main.changeLayout(400,700,"Test Case Console");
+        });
         return button;
     }
 
@@ -218,4 +221,7 @@ public class testCaseGUI {
     public static void flush(){
         flush(100);
     }
+
+
+
 }

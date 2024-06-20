@@ -14,7 +14,7 @@ import java.util.List;
  * @author braydenleung-Git
  * This class is created to handle updating the testcase database and processing request towards access the database
  */
-public class testCaseHandler {
+public class testCaseHandler{
     //set methods back to private later, there should have been something else calling it
     private final static String jsonFile = "./src/main/resources/testSolutions.json";
 

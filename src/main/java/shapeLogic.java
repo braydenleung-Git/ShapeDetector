@@ -1,39 +1,13 @@
 import java.util.*;
 public class shapeLogic {
-    /*
-    public static void main(String[] args){
-    //public static void start(){
-        int[][] pixels = {//0 is for white and 1 is for black
-            {0, 0, 0, 0, 0, 0},
-            {0, 1, 1, 1, 1, 1},
-            {0, 1, 1, 1, 1, 1},
-            {0, 1, 1, 1, 1, 1},
-            {0, 1, 1, 1, 1, 1},
-            {0, 0, 0, 0, 0, 0}
-        };
-        int[] ar = findpixel(pixels);
-        System.out.println(Arrays.toString(ar));
-        int[][] shape = returnothershape(pixels, ar);
-        //printarray(shape);
-        printarray(shape);
-        System.out.println();
-        shape = trim(shape);
-        printarray(shape);
 
-        fourshape(shape);
-        //System.out.println(triangle(shape));
-    }
-     */
     public static void shapeL(int[][] pixels){
         int[] ar = findPixel(pixels);
-        //System.out.println(Arrays.toString(ar));
         int[][] shape = returnOtherShape(pixels, ar);
-        //printarray(shape);
-        //System.out.println();
         shape = trim(shape);
-        //printarray(shape);
         fourShape(shape);
     }
+
     public static int[] findPixel(int[][] parray){
         for (int y = 0; y < parray.length; y ++){
             for (int x = 0; x < parray[y].length; x ++){//looping through every element in the array
@@ -90,7 +64,7 @@ public class shapeLogic {
         for (int y = coords[0]; y < maxy+1; y ++) {//index 0 is y and index 1 is x
             //looping through every element in the array
             if (maxx + 1 - coords[1] >= 0)
-                System.arraycopy(parray[y], coords[1], smaller[y - coords[0]], coords[1] - coords[1], maxx + 1 - coords[1]);
+                System.arraycopy(parray[y], coords[1], smaller[y - coords[0]], 0, maxx + 1 - coords[1]);
         }
         for (int[] y : smaller){
             for (int x : y){
@@ -121,7 +95,7 @@ public class shapeLogic {
         int[][] smaller = new int[maxY - minY + 1][maxX - minX + 1];
         for (int y = minY; y <= maxY; y++) {
             if (maxX + 1 - minX >= 0)
-                System.arraycopy(parray[y], minX, smaller[y - minY], minX - minX, maxX + 1 - minX);
+                System.arraycopy(parray[y], minX, smaller[y - minY], 0, maxX + 1 - minX);
         }
 
         // Print the smaller array
@@ -302,6 +276,37 @@ public class shapeLogic {
                 System.out.println();
             }*/
             System.out.println(squareOrRectangle(shape));
+        }
+    }
+
+    private void seperateShapes(int[][] original){
+        //1st layer, point of origin
+        //2nd layer
+        ArrayList<int[][][]> shapes = new ArrayList<>();
+        for (int i = 0; i < original.length; i++) {
+            for (int j = 0; j < original[i].length; j++) {
+                //if it is a black point, and has not been added to any of the array, then add it to the array else, create a new one
+                if(original[i][j] == 1) {
+                    for(int[][][] item : shapes){
+                        i - item[0][0][0]
+                    }
+                }
+                if(original[i][j] == 1 && bool){
+                    int[][][] temp = new int[2][1][1];
+                    temp[0][0][0] = i;//row cord
+                    temp[0][1][0] = j;//col cord
+                    temp[1][0][0] = original[i][j];
+                    shapes.add(temp);
+
+
+                    while(true){
+
+                    }
+
+                    //spread out pattern
+                    //for each black pixel found expand the array
+                }
+            }
         }
     }
 }
