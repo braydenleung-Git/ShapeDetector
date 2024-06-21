@@ -80,6 +80,7 @@ public class testCaseGUI {
         normal_Text = new SimpleAttributeSet();
         console.setBackground(Color.BLACK);
         StyleConstants.setForeground(normal_Text, Color.white);
+        console.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(20f));
         //set the console output
         PrintStream output = new PrintStream(new OutputStream() {
             @Override
@@ -108,6 +109,7 @@ public class testCaseGUI {
 
     static JTextField setupInputField(){
         JTextField input = new JTextField();
+        input.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(20f));
         consoleThread = new Thread(() -> {
             //TL:DR, it reads input, and sends it to the console
             input.addKeyListener(new KeyListener() {

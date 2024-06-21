@@ -17,6 +17,7 @@ public class outputGUI extends JPanel {
         // Display the path of the dropped file
         JLabel label = new JLabel("Dropped file: " + filePath);
         label.setBounds(20, 20, 360, 20);  // Position the label
+        label.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         label.setForeground(Color.WHITE);
         add(label);
 
@@ -24,25 +25,25 @@ public class outputGUI extends JPanel {
         // Add test statements
         JLabel circle = new JLabel("The amount of circles are: " + circles);
         circle.setBounds(20, 170, 200, 40);
-        circle.setFont(new Font("Calibri", Font.BOLD, 14));
+        circle.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         circle.setForeground(Color.WHITE);
 
 
         JLabel rect = new JLabel("The amount of rectangles are: " + circles);
         rect.setBounds(20, 190, 200, 40);
-        rect.setFont(new Font("Calibri", Font.BOLD, 14));
+        rect.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         rect.setForeground(Color.WHITE);
 
 
         JLabel square = new JLabel("The amount of squares are: " + circles);
         square.setBounds(20, 210, 200, 40);
-        square.setFont(new Font("Calibri", Font.BOLD, 14));
+        square.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         square.setForeground(Color.WHITE);
 
 
         JLabel tri = new JLabel("The amount of triangles are: " + circles);
         tri.setBounds(20, 230, 200, 40);
-        tri.setFont(new Font("Calibri", Font.BOLD, 14));
+        tri.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         tri.setForeground(Color.WHITE);
 
 

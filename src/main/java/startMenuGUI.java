@@ -42,9 +42,9 @@ public class startMenuGUI extends JPanel {
         JButton colorPicker = new JButton("Pick Color");
         colorPicker.setPreferredSize(new Dimension( 40, 60));
 
-        dnD.setFont(new Font("Serif", Font.BOLD, 14));
-        testCase.setFont(new Font("Serif", Font.BOLD, 30));
-        colorPicker.setFont(new Font("Serif", Font.BOLD, 30));
+        dnD.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
+        testCase.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(30f));
+        colorPicker.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(30f));
 
         // Add drop target to button
         new DropTarget(dnD, new FileDropTargetListener());
