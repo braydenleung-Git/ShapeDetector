@@ -28,10 +28,6 @@ public class startMenuGUI extends JPanel {
         constraints.insets = new Insets(0, 80, 5, 80); // Set margin
         backG("/J4o.gif");
 
-
-
-
-
         // Making buttons
         JButton dnD = new JButton(/*);*/"<html><center>Drag and Drop Your Files Here <br> Or Click to Browse Your File</center></html>");
         dnD.setPreferredSize(new Dimension(40, 60));
@@ -130,12 +126,13 @@ public class startMenuGUI extends JPanel {
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
-            boolean png = true;
             File selectedFile = null;
-                if (!selectedFile.getName().toLowerCase().endsWith(".png")) {
-                    selectedFile = fileChooser.getSelectedFile();
-                    path = selectedFile.getAbsolutePath();
-                }
+            if (!selectedFile.getName().toLowerCase().endsWith(".png")) {
+                selectedFile = fileChooser.getSelectedFile();
+                path = selectedFile.getAbsolutePath();
+                Image2Array.processImage(selectedFile);
+                shapeLogic.shapeL(Image2Array.getTranscodedArray());
+            }
 
 
         }
@@ -189,6 +186,8 @@ public class startMenuGUI extends JPanel {
                         for (File file : droppedFiles) {
                             System.err.println("Dropped file: " + file.getAbsolutePath());
                             path = file.getAbsolutePath();
+                            Image2Array.processImage(file);
+                            shapeLogic.shapeL(Image2Array.getTranscodedArray());
                         }
                         dtde.dropComplete(true);
                         main.changeLayout(400, 400, "Output Panel");

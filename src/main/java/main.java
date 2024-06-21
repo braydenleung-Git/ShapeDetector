@@ -39,6 +39,7 @@ public class main {
     public static void changeLayout(int width, int height, String layout) {
         if(layout.equals("Output Panel")){
             mainPanel.add(new outputGUI(),"Output Panel");
+            mainPanel.repaint();
         }
         else if(layout.equals("Start Menu")){
             mainPanel.remove(2);

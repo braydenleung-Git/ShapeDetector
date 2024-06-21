@@ -53,7 +53,6 @@ public class testCaseGUI {
                     }
                     startMenuGUI.path = testCaseHandler.getItem(uI).toString();
                     Image2Array.processImage(startMenuGUI.path);
-
                     shapeLogic.shapeL(Image2Array.getTranscodedArray());
                     flush();
                     main.changeLayout(400,400,"Output Panel");

@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -29,7 +30,27 @@ public class Image2Array {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public static void processImage(File file) {
+        try {
+            //BufferedImage img = Imaging.getBufferedImage(Image2Array.class.getResourceAsStream(imgPath)); // not working
+            BufferedImage img = ImageIO.read(file);
+            int width = img.getWidth();
+            int height = img.getHeight();
+            pixelArray = new int[height][width];
+            transcodedArray = new int[height][width];
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) {
+                    // Get RGB value of the pixel
+                    int rgb = img.getRGB(x, y);
+                    pixelArray[y][x] = rgb;
+                }
+            }
+            transcodeArray(height, width);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void transcodeArray(int y, int x) {

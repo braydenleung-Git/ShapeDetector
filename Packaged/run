@@ -1,0 +1,8 @@
+#!/bin/bash
+java_v='command -v java'
+if [[ "$java_v" == null ]]; then
+    echo"Java is not found. Please install java via https://www.oracle.com/java/technologies/downloads/"
+else
+    cd "$(dirname "$0")"
+    java -jar ShapeDetector*.jar
+fi

@@ -30,19 +30,19 @@ public class outputGUI extends JPanel {
         circle.setForeground(Color.WHITE);
 
 
-        JLabel rect = new JLabel("The amount of rectangles are: " + circles);
+        JLabel rect = new JLabel("The amount of rectangles are: " + rectangles);
         rect.setBounds(20, 190, 200, 40);
         rect.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         rect.setForeground(Color.WHITE);
 
 
-        JLabel square = new JLabel("The amount of squares are: " + circles);
+        JLabel square = new JLabel("The amount of squares are: " + squares);
         square.setBounds(20, 210, 200, 40);
         square.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         square.setForeground(Color.WHITE);
 
 
-        JLabel tri = new JLabel("The amount of triangles are: " + circles);
+        JLabel tri = new JLabel("The amount of triangles are: " + triangles);
         tri.setBounds(20, 230, 200, 40);
         tri.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         tri.setForeground(Color.WHITE);
