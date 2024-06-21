@@ -20,6 +20,11 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/commons-imaging-1.0.0-alpha5.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
