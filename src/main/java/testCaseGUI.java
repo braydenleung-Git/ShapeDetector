@@ -8,6 +8,7 @@ import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -26,11 +27,42 @@ public class testCaseGUI {
     static StyledDocument doc;
     static SimpleAttributeSet normal_Text;
 
-    public static JButton setupButton(){
+    public static JButton setupButton() {
         JButton button =  new JButton();
         button.setText("Test Presets");
         button.addActionListener(e->{
             main.changeLayout(400,700,"Test Case Console");
+            //Test json to sorting algorithm
+            new Thread(()->{
+                    testCaseHandler.writeToJson();
+
+                System.out.println("Which file would you like to see?");
+                try {
+                    for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
+                        System.out.println(testCaseHandler.getItemList().get(i));
+                    }
+                    int uI = testCaseGUI.readInt("Enter number: ");
+                    boolean doNotExit = true;
+                    while(doNotExit){
+                        if(uI > testCaseHandler.getItemList().size()){
+                            flush();
+                            for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
+                                System.out.println(testCaseHandler.getItemList().get(i));
+                            }
+                            uI = testCaseGUI.readInt("Invalid input, please Enter Number:");
+                        }
+                        else{
+                            doNotExit = false;
+                        }
+                    }
+                    Image2Array.processImage(testCaseHandler.getItem(uI).toString());
+                    shapeLogic.shapeL(Image2Array.getTranscodedArray());
+                    main.changeLayout(400,400,"Output Panel");
+
+                }catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }).start();
         });
         return button;
     }

@@ -41,4 +41,5 @@ public class main {
         f.setLocation((screenSize.width / 2) - (f.getWidth() / 2), (screenSize.height / 2) - (f.getHeight() / 2));
 
     }
+
 }

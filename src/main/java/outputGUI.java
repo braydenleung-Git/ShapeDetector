@@ -5,10 +5,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class outputGUI extends JPanel {
-    private static int circles;
-    private  static int rectangles;
-    private  static int squares;
-    private static int triangles;
+    public static int circles;
+    public static int rectangles;
+    public static int squares;
+    public static int triangles;
     public outputGUI() {
         String filePath = startMenuGUI.getPath();
         setSize(400, 400);
@@ -69,7 +69,8 @@ public class outputGUI extends JPanel {
             }
         }
     }
-
+    //deprecated
+    @Deprecated
     public static void updateCount(int circles,int rectangles,int squares,int triangles){
         outputGUI.circles = circles;
         outputGUI.rectangles = rectangles;

@@ -1,6 +1,10 @@
 import java.util.*;
 public class shapeLogic {
 
+    public static void shapeL(int[][] pixels,boolean test){
+
+    }
+
     public static void shapeL(int[][] pixels){
         int[] ar = findPixel(pixels);
         int[][] shape = returnOtherShape(pixels, ar);
@@ -230,12 +234,12 @@ public class shapeLogic {
         return shape;
     }
 
-    public static String squareOrRectangle(int[][] shape){
+    public static void squareOrRectangle(int[][] shape){
         if (shape[0].length == shape.length){
-            return "square";
+            outputGUI.squares++;
         }
         else{
-            return "rectangle";
+            outputGUI.rectangles++;
         }
     }
 
@@ -260,10 +264,12 @@ public class shapeLogic {
     public static void fourShape(int[][] shape){
         //System.out.println(shape[Math.ceilDiv(2, shape.length)].length);
         if (shape[0].length < shape[Math.ceilDiv(2, shape.length)].length & shape[Math.ceilDiv(2, shape.length)].length > shape[shape.length-1].length){
-            System.out.println("Circle");
+            //System.out.println("Circle");
+            outputGUI.circles++;
         }
         else if (triangle(shape)){
             System.out.println("Triangle");
+            outputGUI.triangles++;
         }
         else{
             /*
@@ -275,7 +281,7 @@ public class shapeLogic {
                 }
                 System.out.println();
             }*/
-            System.out.println(squareOrRectangle(shape));
+            squareOrRectangle(shape);
         }
     }
 
