@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+
 public class outputGUI extends JPanel {
     public static int circles = 0;
     public static int rectangles = 0;
@@ -15,12 +16,15 @@ public class outputGUI extends JPanel {
         setBackground(Color.BLACK);
         setLayout(null);
 
+
         // Display the path of the dropped file
         JLabel label = new JLabel("Dropped file: " + filePath);
         label.setBounds(20, 20, 360, 20);  // Position the label
         label.setFont(main.HelvetciaNeue_Cond_B_05.deriveFont(14f));
         label.setForeground(Color.WHITE);
         add(label);
+
+
 
 
         // Add test statements
@@ -48,11 +52,14 @@ public class outputGUI extends JPanel {
         tri.setForeground(Color.WHITE);
 
 
+
+
         JButton repeat = new JButton("Return to Start");
         repeat.addActionListener(e -> {
             main.changeLayout(400, 400, "Start Menu");
         });
         repeat.setBounds(20, 280, 120, 30);
+
 
         // Optionally load and display the image if it's an image file
         if (filePath != null && (filePath.endsWith(".png") )) {
@@ -79,6 +86,7 @@ public class outputGUI extends JPanel {
             }
         }
 
+
         // Adding labels and button
         add(circle);
         add(rect);
@@ -86,7 +94,9 @@ public class outputGUI extends JPanel {
         add(tri);
         add(repeat);
 
+
     }
+
 
     public static void reset(){
         circles = 0;
@@ -95,3 +105,4 @@ public class outputGUI extends JPanel {
         squares = 0;
     }
 }
+
