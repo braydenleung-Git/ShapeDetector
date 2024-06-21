@@ -12,10 +12,11 @@ import java.util.List;
 public class startMenuGUI extends JPanel {
 
     static String path;
+    ImageIcon background;
 
     public startMenuGUI() {
         // Basic settings
-        setBackground(Color.WHITE);
+        //setBackground(Color.WHITE);
         this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.CENTER;
@@ -25,6 +26,10 @@ public class startMenuGUI extends JPanel {
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
         constraints.insets = new Insets(0, 80, 5, 80); // Set margin
+        backG("/J4o.gif");
+
+
+
 
 
         // Making buttons
@@ -90,6 +95,20 @@ public class startMenuGUI extends JPanel {
         // Add action listener to color picker button
         colorPicker.addActionListener(e -> pickColor());
         dnD.addActionListener(e->browse());
+    }
+
+    public void backG(String gifPath) {
+        // Load the GIF file
+        background = new ImageIcon(getClass().getResource(gifPath));
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Draw the GIF as the background
+        if (background != null) {
+            g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
+        }
     }
 
     public static String getPath(){
