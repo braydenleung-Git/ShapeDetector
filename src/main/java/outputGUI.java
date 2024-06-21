@@ -56,7 +56,7 @@ public class outputGUI extends JPanel {
         add(repeat);
 
         // Optionally load and display the image if it's an image file
-        if (filePath != null && (filePath.endsWith(".png") || filePath.endsWith(".jpg") || filePath.endsWith(".jpeg"))) {
+        if (filePath != null && (filePath.endsWith(".png") )) {
             try {
                 Image image = ImageIO.read(new File(filePath));
                 Image scaledImage = image.getScaledInstance(100, 100, Image.SCALE_SMOOTH);  // Scale the image

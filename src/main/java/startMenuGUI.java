@@ -151,12 +151,23 @@ public class startMenuGUI extends JPanel {
                     Transferable transferable = dtde.getTransferable();
                     List<File> droppedFiles = (List<File>) transferable.getTransferData(DataFlavor.javaFileListFlavor);
 
+                    boolean png = true;
                     for (File file : droppedFiles) {
-                        System.err.println("Dropped file: " + file.getAbsolutePath());
-                        path = file.getAbsolutePath();
+                        // Check if the file extension is .png
+                        if (!file.getName().toLowerCase().endsWith(".png")) {
+                            png = false;
+                            break;
+                        }
                     }
-                    dtde.dropComplete(true);
-                    main.changeLayout(400,400,"Output Panel");
+
+                    if(png) {
+                        for (File file : droppedFiles) {
+                            System.err.println("Dropped file: " + file.getAbsolutePath());
+                            path = file.getAbsolutePath();
+                        }
+                        dtde.dropComplete(true);
+                        main.changeLayout(400, 400, "Output Panel");
+                    }
                 } else {
                     dtde.rejectDrop();
                 }
