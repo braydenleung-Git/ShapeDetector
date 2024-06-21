@@ -2,7 +2,10 @@ import java.util.*;
 public class shapeLogic {
 
     public static void shapeL(int[][] pixels,boolean test){
+        ArrayList<int[][]> listArrays = separateShapes(pixels);
+        for(int[][] curArray : listArrays){
 
+        }
     }
 
     public static void shapeL(int[][] pixels){
@@ -287,7 +290,7 @@ public class shapeLogic {
         }
     }
 
-    private ArrayList<int[][]> separateShapes(int[][] original){
+    private static ArrayList<int[][]> separateShapes(int[][] original){
         //1st layer, point of origin
         //2nd layer
         ArrayList<int[][][]> shapes = new ArrayList<>();

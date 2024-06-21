@@ -38,6 +38,10 @@ public class main {
         if(layout.equals("Output Panel")){
             mainPanel.add(new outputGUI(),"Output Panel");
         }
+        else if(layout.equals("Start Menu")){
+            mainPanel.remove(2);
+            outputGUI.reset();
+        }
         cl.show(mainPanel, layout);
         f.setSize(width, height);
         f.setLocation((screenSize.width / 2) - (f.getWidth() / 2), (screenSize.height / 2) - (f.getHeight() / 2));

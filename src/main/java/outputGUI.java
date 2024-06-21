@@ -69,7 +69,10 @@ public class outputGUI extends JPanel {
 
     }
 
-    public void updateUI(){
-        this.repaint();
+    public void reset(){
+        circles = 0;
+        rectangles = 0;
+        triangles = 0;
+        squares = 0;
     }
 }
