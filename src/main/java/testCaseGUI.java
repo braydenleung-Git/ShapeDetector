@@ -35,12 +35,12 @@ public class testCaseGUI {
                 System.out.println("Which file would you like to see?");
                 try {
                     for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
-                        System.out.println(testCaseHandler.getItemList().get(i));
+                        System.out.println((i+1)+". "+testCaseHandler.getItemList().get(i));
                     }
                     int uI = testCaseGUI.readInt("Enter number: ");
                     boolean doNotExit = true;
                     while(doNotExit){
-                        if(uI > testCaseHandler.getItemList().size()){
+                        if((uI) > testCaseHandler.getItemList().size()){
                             flush();
                             for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
                                 System.out.println(testCaseHandler.getItemList().get(i));
@@ -51,7 +51,9 @@ public class testCaseGUI {
                             doNotExit = false;
                         }
                     }
-                    Image2Array.processImage(testCaseHandler.getItem(uI).toString());
+                    startMenuGUI.path = testCaseHandler.getItem(uI).toString();
+                    Image2Array.processImage(startMenuGUI.path);
+
                     shapeLogic.shapeL(Image2Array.getTranscodedArray());
                     flush();
                     main.changeLayout(400,400,"Output Panel");

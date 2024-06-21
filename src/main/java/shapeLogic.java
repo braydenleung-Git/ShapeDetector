@@ -243,11 +243,11 @@ public class shapeLogic {
 
     public static void squareOrRectangle(int[][] shape){
         if (shape[0].length == shape.length){
-            System.out.println("Square");
+            System.err.println("Square");
             outputGUI.squares++;
         }
         else{
-            System.out.println("Rectangle");
+            System.err.println("Rectangle");
             outputGUI.rectangles++;
         }
     }
@@ -273,11 +273,11 @@ public class shapeLogic {
     public static void fourShape(int[][] shape){
         //System.out.println(shape[Math.ceilDiv(2, shape.length)].length);
         if (shape[0].length < shape[Math.ceilDiv(2, shape.length)].length & shape[Math.ceilDiv(2, shape.length)].length > shape[shape.length-1].length){
-            System.out.println("Circle");
+            System.err.println("Circle");
             outputGUI.circles++;
         }
         else if (triangle(shape)){
-            System.out.println("Triangle");
+            System.err.println("Triangle");
             outputGUI.triangles++;
         }
         else{

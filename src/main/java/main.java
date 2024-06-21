@@ -27,7 +27,6 @@ public class main {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel startMenu = new startMenuGUI();
         mainPanel.add(startMenu,"Start Menu");
-
         JPanel testCaseConsole = testCaseGUI.setupTestGUI();
         mainPanel.add(testCaseConsole, "Test Case Console");
         f.add(mainPanel);

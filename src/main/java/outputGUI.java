@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class outputGUI extends JPanel {
     public static int circles = 0;
@@ -63,7 +64,18 @@ public class outputGUI extends JPanel {
                 imageLabel.setBounds(20, 50, 100, 100);  // Position the image label
                 add(imageLabel);
             } catch (IOException e) {
-                e.printStackTrace();
+                Image image = null;
+                try {
+                    InputStream Image_Source = outputGUI.class.getResourceAsStream(filePath);
+                    image = ImageIO.read(Image_Source);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Image scaledImage = image.getScaledInstance(100, 100, Image.SCALE_SMOOTH);  // Scale the image
+                ImageIcon icon = new ImageIcon(scaledImage);
+                JLabel imageLabel = new JLabel(icon);
+                imageLabel.setBounds(20, 50, 100, 100);  // Position the image label
+                add(imageLabel);
             }
         }
 
