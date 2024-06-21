@@ -77,4 +77,9 @@ public class outputGUI extends JPanel {
         outputGUI.squares = squares;
         outputGUI.triangles = triangles;
     }
+
+
+    public static void updateUI(){
+        this.repaint();
+    }
 }

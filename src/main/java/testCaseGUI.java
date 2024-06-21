@@ -32,10 +32,9 @@ public class testCaseGUI {
         button.setText("Test Presets");
         button.addActionListener(e->{
             main.changeLayout(400,700,"Test Case Console");
-            //Test json to sorting algorithm
             new Thread(()->{
-                    testCaseHandler.writeToJson();
-
+                //Test json to sorting algorithm
+                testCaseHandler.writeToJson();
                 System.out.println("Which file would you like to see?");
                 try {
                     for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
