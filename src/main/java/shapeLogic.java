@@ -279,34 +279,122 @@ public class shapeLogic {
         }
     }
 
-    private void seperateShapes(int[][] original){
+    private ArrayList<int[][]> separateShapes(int[][] original){
         //1st layer, point of origin
         //2nd layer
         ArrayList<int[][][]> shapes = new ArrayList<>();
+        ArrayList<int[][]> output = new ArrayList<>();
         for (int i = 0; i < original.length; i++) {
             for (int j = 0; j < original[i].length; j++) {
-                //if it is a black point, and has not been added to any of the array, then add it to the array else, create a new one
-                if(original[i][j] == 1) {
-                    for(int[][][] item : shapes){
-                        i - item[0][0][0]
-                    }
-                }
-                if(original[i][j] == 1 && bool){
+                //if it's black point, and no array has been added, add an array
+                if(original[i][j] == 1 && shapes.isEmpty()){
                     int[][][] temp = new int[2][1][1];
                     temp[0][0][0] = i;//row cord
                     temp[0][1][0] = j;//col cord
                     temp[1][0][0] = original[i][j];
                     shapes.add(temp);
+                }
+                //if it is a black point, and has not been added to any of the array, then add it to the array else, create a new one
+                if(original[i][j] == 1){
+                    int positiveX = 0;
+                    int negativeX = 0;
+                    int positiveY = 0;
+                    int negativeY= 0 ;
+                    int counter = 0;
+                    for (int[][][] shape : shapes) {
+                        //gets the relative position of the black pixel
+                        int deltaX = i - shape[0][0][0];
+                        int deltaY = j - shape[0][1][0];
+                        //the first array number means the layer, the second means the row number of that layer
+                        //if the deltas are out of bound of the arrays
+                        if (deltaX < 0 || deltaY < 0 || deltaX > shape[1].length || deltaY > shape[1][0].length) {
+                            if (deltaX - shape[1].length == 1 && (deltaY == 0 || deltaY - shape[1][0].length == 1 || deltaY - shape[1][0].length == -1)) {
+                                positiveX = 1;
+                            }
+                            else if (deltaX - shape[1].length == -1 && (deltaY == 0 || deltaY - shape[1][0].length == 1 || deltaY - shape[1][0].length == -1)) {
+                                negativeX = 1;
+                            }
 
-
-                    while(true){
-
+                            if (deltaY - shape[1][0].length == 1 && (deltaX == 0 || deltaX - shape[1].length == 1 || deltaX - shape[1].length == -1)) {
+                                positiveY = 1;
+                            }
+                            else if (deltaY - shape[1][0].length == -1 && (deltaX == 0 || deltaX - shape[1].length == 1 || deltaX - shape[1].length == -1)) {
+                                negativeY = 1;
+                            }
+                        }
+                        if (positiveX == 1 || negativeX == 1 || positiveY == 1 || negativeY == 1) {
+                            int newX = shape[0][0][0] + positiveX - negativeX;
+                            int newY = shape[0][1][0] + positiveY - negativeY;
+                            int[][] newArray = new int[shape[1].length + positiveX + negativeY][shape[1][0].length + positiveY + negativeY];
+                            //copies the old array to new array, and add the new pixel to the array
+                            if (positiveX == 1 && negativeY == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k], 1, shape[1][k].length);
+                                }
+                                newArray[shape[1].length][0] = 1;
+                            }
+                            else if (positiveX == 1 && positiveY == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k], 0, shape[1][k].length);
+                                }
+                                newArray[shape[1].length][shape[1][0].length] = 1;
+                            }
+                            else if (negativeX == 1 && negativeY == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k + 1], 1, shape[1][k].length);
+                                }
+                                newArray[0][0] = 1;
+                            }
+                            else if (negativeX == 1 && positiveY == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k + 1], 0, shape[1][k].length);
+                                }
+                                newArray[0][shape[1][0].length] = 1;
+                            }
+                            else if (positiveX == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k], 0, shape[1][k].length);
+                                }
+                                newArray[shape[1].length][deltaY] = 1;
+                            }
+                            else if (negativeX == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k + 1], 0, shape[1][k].length);
+                                }
+                                newArray[0][deltaY] = 1;
+                            }
+                            else if (positiveY == 1) {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k], 0, shape[1][k].length);
+                                }
+                                newArray[deltaX][shape[1][0].length] = 1;
+                            }
+                            else {
+                                for (int k = 0; k < shape[1].length; k++) {
+                                    System.arraycopy(shape[1][k], 0, newArray[k], 1, shape[1][k].length);
+                                }
+                                newArray[deltaX][0] = 1;
+                            }
+                            int[][][] temp = new int[2][newArray.length][newArray[0].length];
+                            temp[0][0][0] = newX;
+                            temp[0][1][0] = newY;
+                            temp[1] = newArray;
+                            shapes.set(counter, temp);
+                        }
+                    }//if the pixel is not near any arrays, then create new one
+                    if(counter == shapes.size() - 1){
+                        int[][][] temp = new int[2][1][1];
+                        temp[0][0][0] = i;
+                        temp[0][1][0] = j;
+                        temp[1][0][0] = original[i][j];
+                        shapes.add(temp);
                     }
-
-                    //spread out pattern
-                    //for each black pixel found expand the array
                 }
             }
         }
+        for (int[][][] shape : shapes) {
+            output.add(shape[1]);
+        }
+        return output;
     }
 }
