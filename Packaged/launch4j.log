@@ -1,0 +1,334 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	1
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	1.021.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\19.0.1
+Version string: 1.019.000_001 / 64-Bit (Ignore)
+Ignore:		1.019.000_001
+Check:		SOFTWARE\JavaSoft\JDK\21.0.2
+Version string: 1.021.000_002 / 64-Bit (OK)
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-21\bin\javac.exe (OK)
+Match:		1.021.000_002
+Runtime used:	1.021.000_002 (64-bit)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\brayd\Desktop\ShapeDetector\Packaged\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	1.021.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\brayd\AppData\Local\Microsoft\WindowsApps;;C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin;;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\WinMerge\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\brayd\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-19\bin\javac.exe (OK)
+Version string: 1.019.000_001 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\19.0.1
+Version string: 1.019.000_001 / 64-Bit (Ignore)
+Ignore:		1.019.000_001
+Check:		SOFTWARE\JavaSoft\JDK\21.0.2
+Version string: 1.021.000_002 / 64-Bit (OK)
+Check launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-21\bin\javac.exe (OK)
+Match:		1.021.000_002
+Runtime used:	1.021.000_002 (64-bit)
+Launcher:	C:\Program Files\Java\jdk-21\bin\javaw.exe
+Launcher args:	-jar "C:\Users\brayd\Desktop\ShapeDetector\Packaged\ShapeDetector.exe"
+Args length:	70/32768 chars
+Exit code:	0
