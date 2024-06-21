@@ -11,9 +11,7 @@ public class outputGUI extends JPanel {
     public static int triangles;
     public outputGUI() {
         String filePath = startMenuGUI.getPath();
-        setSize(400, 400);
         setBackground(Color.BLACK);
-        setLayout(null);  // Use absolute layout for positioning components
 
         // Display the path of the dropped file
         JLabel label = new JLabel("Dropped file: " + filePath);
@@ -22,22 +20,22 @@ public class outputGUI extends JPanel {
         add(label);
 
         // Add test statements
-        JLabel circle = new JLabel("The amount of circles are: "+circles);
+        JLabel circle = new JLabel("The amount of circles are: "/*+circles*/);
         circle.setPreferredSize(new Dimension(200, 40));
         circle.setFont(new Font("Calibri", Font.BOLD, 14));
         circle.setForeground(Color.WHITE);
 
-        JLabel rect = new JLabel("The amount of rectangles are: "+rectangles);
+        JLabel rect = new JLabel("The amount of rectangles are: "/*+rectangles*/);
         rect.setPreferredSize(new Dimension(200, 40));
         rect.setFont(new Font("Calibri", Font.BOLD, 14));
         rect.setForeground(Color.WHITE);
 
-        JLabel square = new JLabel("The amount of squares are: "+ squares);
+        JLabel square = new JLabel("The amount of squares are: "/*+ squares*/);
         square.setPreferredSize(new Dimension(200, 40));
         square.setFont(new Font("Calibri", Font.BOLD, 14));
         square.setForeground(Color.WHITE);
 
-        JLabel tri = new JLabel("The amount of triangles are: "+triangles);
+        JLabel tri = new JLabel("The amount of triangles are: "/*+triangles*/);
         tri.setPreferredSize(new Dimension(200, 40));
         tri.setFont(new Font("Calibri", Font.BOLD, 14));
         tri.setForeground(Color.WHITE);
@@ -47,13 +45,6 @@ public class outputGUI extends JPanel {
             main.changeLayout(400, 400, "Start Menu");
         });
         repeat.setBounds(20, 280, 120, 30);
-
-        // Adding labels and button
-        add(circle);
-        add(rect);
-        add(square);
-        add(tri);
-        add(repeat);
 
         // Optionally load and display the image if it's an image file
         if (filePath != null && (filePath.endsWith(".png") )) {
@@ -68,18 +59,25 @@ public class outputGUI extends JPanel {
                 e.printStackTrace();
             }
         }
+
+        // Adding labels and button
+        add(circle);
+        add(rect);
+        add(square);
+        add(tri);
+        add(repeat);
+
     }
-    //deprecated
+
+    public void updateUI(){
+        this.repaint();
+    }
+
     @Deprecated
     public static void updateCount(int circles,int rectangles,int squares,int triangles){
         outputGUI.circles = circles;
         outputGUI.rectangles = rectangles;
         outputGUI.squares = squares;
         outputGUI.triangles = triangles;
-    }
-
-
-    public static void updateUI(){
-        this.repaint();
     }
 }

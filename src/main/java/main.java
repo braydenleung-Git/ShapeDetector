@@ -41,7 +41,7 @@ public class main {
         f.setSize(width, height);
         f.setLocation((screenSize.width / 2) - (f.getWidth() / 2), (screenSize.height / 2) - (f.getHeight() / 2));
         if(layout.equals("Output Panel")){
-            outputPanel.repaint();
+            outputPanel.updateUI();
         }
     }
 }

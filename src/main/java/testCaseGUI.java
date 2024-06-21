@@ -1,10 +1,7 @@
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
+import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -56,6 +53,7 @@ public class testCaseGUI {
                     }
                     Image2Array.processImage(testCaseHandler.getItem(uI).toString());
                     shapeLogic.shapeL(Image2Array.getTranscodedArray());
+                    flush();
                     main.changeLayout(400,400,"Output Panel");
 
                 }catch (IOException ex) {
@@ -252,7 +250,4 @@ public class testCaseGUI {
     public static void flush(){
         flush(100);
     }
-
-
-
 }
