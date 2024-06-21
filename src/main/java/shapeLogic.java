@@ -3,8 +3,12 @@ public class shapeLogic {
 
     public static void shapeL(int[][] pixels,boolean test){
         ArrayList<int[][]> listArrays = separateShapes(pixels);
+        ArrayList<int[][]> array = listArrays;
         for(int[][] curArray : listArrays){
-
+            int[] ar = findPixel(curArray);
+            int[][] shape = returnOtherShape(curArray, ar);
+            shape = trim(shape);
+            fourShape(shape);
         }
     }
 
@@ -295,18 +299,20 @@ public class shapeLogic {
         //2nd layer
         ArrayList<int[][][]> shapes = new ArrayList<>();
         ArrayList<int[][]> output = new ArrayList<>();
+        boolean firstOne = false;
         for (int i = 0; i < original.length; i++) {
             for (int j = 0; j < original[i].length; j++) {
                 //if it's black point, and no array has been added, add an array
                 if(original[i][j] == 1 && shapes.isEmpty()){
-                    int[][][] temp = new int[2][1][1];
+                    int[][][] temp = new int[2][2][1];
                     temp[0][0][0] = i;//row cord
                     temp[0][1][0] = j;//col cord
                     temp[1][0][0] = original[i][j];
                     shapes.add(temp);
+                    firstOne = true;
                 }
                 //if it is a black point, and has not been added to any of the array, then add it to the array else, create a new one
-                if(original[i][j] == 1){
+                else if(original[i][j] == 1 && !firstOne){
                     int positiveX = 0;
                     int negativeX = 0;
                     int positiveY = 0;
@@ -394,13 +400,14 @@ public class shapeLogic {
                         }
                     }//if the pixel is not near any arrays, then create new one
                     if(counter == shapes.size() - 1){
-                        int[][][] temp = new int[2][1][1];
+                        int[][][] temp = new int[2][2][1];
                         temp[0][0][0] = i;
                         temp[0][1][0] = j;
                         temp[1][0][0] = original[i][j];
                         shapes.add(temp);
                     }
                 }
+                firstOne = false;
             }
         }
         for (int[][][] shape : shapes) {
