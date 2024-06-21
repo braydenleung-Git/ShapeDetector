@@ -111,8 +111,14 @@ public class startMenuGUI extends JPanel {
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            path = selectedFile.getAbsolutePath();
+            boolean png = true;
+            File selectedFile = null;
+                if (!selectedFile.getName().toLowerCase().endsWith(".png")) {
+                    selectedFile = fileChooser.getSelectedFile();
+                    path = selectedFile.getAbsolutePath();
+                }
+
+
         }
     }
 

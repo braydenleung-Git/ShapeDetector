@@ -12,33 +12,39 @@ public class outputGUI extends JPanel {
     public outputGUI() {
         String filePath = startMenuGUI.getPath();
         setBackground(Color.BLACK);
+        setLayout(null);
 
         // Display the path of the dropped file
         JLabel label = new JLabel("Dropped file: " + filePath);
-        label.setPreferredSize(new Dimension(360, 20));  // Position the label
+        label.setBounds(20, 20, 360, 20);  // Position the label
         label.setForeground(Color.WHITE);
         add(label);
 
+
         // Add test statements
-        JLabel circle = new JLabel("The amount of circles are: "+circles);
-        circle.setPreferredSize(new Dimension(200, 40));
+        JLabel circle = new JLabel("The amount of circles are: " + circles);
+        circle.setBounds(20, 170, 200, 40);
         circle.setFont(new Font("Calibri", Font.BOLD, 14));
         circle.setForeground(Color.WHITE);
 
-        JLabel rect = new JLabel("The amount of rectangles are: "+rectangles);
-        rect.setPreferredSize(new Dimension(200, 40));
+
+        JLabel rect = new JLabel("The amount of rectangles are: " + circles);
+        rect.setBounds(20, 190, 200, 40);
         rect.setFont(new Font("Calibri", Font.BOLD, 14));
         rect.setForeground(Color.WHITE);
 
-        JLabel square = new JLabel("The amount of squares are: "+ squares);
-        square.setPreferredSize(new Dimension(200, 40));
+
+        JLabel square = new JLabel("The amount of squares are: " + circles);
+        square.setBounds(20, 210, 200, 40);
         square.setFont(new Font("Calibri", Font.BOLD, 14));
         square.setForeground(Color.WHITE);
 
-        JLabel tri = new JLabel("The amount of triangles are: "+triangles);
-        tri.setPreferredSize(new Dimension(200, 40));
+
+        JLabel tri = new JLabel("The amount of triangles are: " + circles);
+        tri.setBounds(20, 230, 200, 40);
         tri.setFont(new Font("Calibri", Font.BOLD, 14));
         tri.setForeground(Color.WHITE);
+
 
         JButton repeat = new JButton("Return to Start");
         repeat.addActionListener(e -> {
