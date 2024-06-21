@@ -5,10 +5,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class outputGUI extends JPanel {
-    public static int circles;
-    public static int rectangles;
-    public static int squares;
-    public static int triangles;
+    public static int circles = 0;
+    public static int rectangles = 0;
+    public static int squares = 0;
+    public static int triangles = 0;
     public outputGUI() {
         String filePath = startMenuGUI.getPath();
         setBackground(Color.BLACK);
@@ -20,22 +20,22 @@ public class outputGUI extends JPanel {
         add(label);
 
         // Add test statements
-        JLabel circle = new JLabel("The amount of circles are: "/*+circles*/);
+        JLabel circle = new JLabel("The amount of circles are: "+circles);
         circle.setPreferredSize(new Dimension(200, 40));
         circle.setFont(new Font("Calibri", Font.BOLD, 14));
         circle.setForeground(Color.WHITE);
 
-        JLabel rect = new JLabel("The amount of rectangles are: "/*+rectangles*/);
+        JLabel rect = new JLabel("The amount of rectangles are: "+rectangles);
         rect.setPreferredSize(new Dimension(200, 40));
         rect.setFont(new Font("Calibri", Font.BOLD, 14));
         rect.setForeground(Color.WHITE);
 
-        JLabel square = new JLabel("The amount of squares are: "/*+ squares*/);
+        JLabel square = new JLabel("The amount of squares are: "+ squares);
         square.setPreferredSize(new Dimension(200, 40));
         square.setFont(new Font("Calibri", Font.BOLD, 14));
         square.setForeground(Color.WHITE);
 
-        JLabel tri = new JLabel("The amount of triangles are: "/*+triangles*/);
+        JLabel tri = new JLabel("The amount of triangles are: "+triangles);
         tri.setPreferredSize(new Dimension(200, 40));
         tri.setFont(new Font("Calibri", Font.BOLD, 14));
         tri.setForeground(Color.WHITE);
@@ -71,13 +71,5 @@ public class outputGUI extends JPanel {
 
     public void updateUI(){
         this.repaint();
-    }
-
-    @Deprecated
-    public static void updateCount(int circles,int rectangles,int squares,int triangles){
-        outputGUI.circles = circles;
-        outputGUI.rectangles = rectangles;
-        outputGUI.squares = squares;
-        outputGUI.triangles = triangles;
     }
 }

@@ -14,7 +14,6 @@ public class main {
     public static JPanel mainPanel = new JPanel();
     public static CardLayout cl = new CardLayout();
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    static JPanel outputPanel = new outputGUI();
     public static void main(String[] args) {
         setupFrame();
         f.setVisible(true);
@@ -26,7 +25,6 @@ public class main {
         JPanel startMenu = new startMenuGUI();
         mainPanel.add(startMenu,"Start Menu");
 
-        mainPanel.add(outputPanel,"Output Panel");
         JPanel testCaseConsole = testCaseGUI.setupTestGUI();
         mainPanel.add(testCaseConsole, "Test Case Console");
         f.add(mainPanel);
@@ -37,11 +35,12 @@ public class main {
     }
 
     public static void changeLayout(int width, int height, String layout) {
+        if(layout.equals("Output Panel")){
+            mainPanel.add(new outputGUI(),"Output Panel");
+        }
         cl.show(mainPanel, layout);
         f.setSize(width, height);
         f.setLocation((screenSize.width / 2) - (f.getWidth() / 2), (screenSize.height / 2) - (f.getHeight() / 2));
-        if(layout.equals("Output Panel")){
-            outputPanel.updateUI();
-        }
+
     }
 }
