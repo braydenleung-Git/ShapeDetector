@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>/Users/brayden/Desktop/ShapeDetector/Packaged/ShapeDetector-1.0-SNAPSHOT.jar</jar>
+  <outfile>/Users/brayden/Desktop/ShapeDetector/Packaged/ShapeDetector.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>true</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon></icon>
+  <singleInstance>
+    <mutexName>ShapeDetector</mutexName>
+    <windowTitle>ShapeDetector</windowTitle>
+  </singleInstance>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>true</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>21</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
