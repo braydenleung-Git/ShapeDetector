@@ -293,7 +293,11 @@ public class shapeLogic {
             squareOrRectangle(shape);
         }
     }
+/*
+TODO:
+    - Index out of bound issue
 
+ */
     private static ArrayList<int[][]> separateShapes(int[][] original){
         //1st layer, point of origin
         //2nd layer
@@ -309,10 +313,10 @@ public class shapeLogic {
                     temp[0][1][0] = j;//col cord
                     temp[1][0][0] = original[i][j];
                     shapes.add(temp);
-                    firstOne = true;
+                    j++;//this skips the current pixel so that the next if statement does not get run for the same pixel
                 }
                 //if it is a black point, and has not been added to any of the array, then add it to the array else, create a new one
-                else if(original[i][j] == 1 && !firstOne){
+                else if(original[i][j] == 1){
                     int positiveX = 0;
                     int negativeX = 0;
                     int positiveY = 0;
@@ -407,7 +411,6 @@ public class shapeLogic {
                         shapes.add(temp);
                     }
                 }
-                firstOne = false;
             }
         }
         for (int[][][] shape : shapes) {
