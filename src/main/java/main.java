@@ -6,7 +6,8 @@ import java.io.InputStream;
 /*
 TODO:
     - multi-shape recognition
-    - UI customization/theme
+    - fix testCaseHandler not able to read json file during run time
+
  */
 public class main {
     static JFrame f =  new JFrame();

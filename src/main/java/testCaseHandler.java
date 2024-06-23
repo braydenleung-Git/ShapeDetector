@@ -4,9 +4,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +37,8 @@ public class testCaseHandler{
         try{
             ObjectMapper objectMapper = new ObjectMapper()
                     .enable(SerializationFeature.INDENT_OUTPUT);
-            JsonNode rootNode = objectMapper.readTree(new FileInputStream(jsonFile));
+            JsonNode rootNode = null;
+            rootNode = objectMapper.readTree(new FileInputStream(jsonFile));
             ArrayNode rootArrayNode = (ArrayNode) rootNode;
             boolean found = false;
             for (String[] filePathAndName : newlyAddedFiles) {
