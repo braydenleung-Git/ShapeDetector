@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @author braydenleung-Git
  * This class is used to set up the GUI for the test case preset panel
  */
-public class testCaseGUI extends testCaseHandler{
+public class testCaseGUI /*extends testCaseHandler*/{
     //This is only used by console, but this would allow the control over the start and stopping of the thread
     public static Thread consoleThread;
     static final Object lock = new Object();
@@ -31,19 +31,19 @@ public class testCaseGUI extends testCaseHandler{
             main.changeLayout(400,700,"Test Case Console");
             new Thread(()->{
                 //Test json to sorting algorithm
-                writeToJson();
+                testCaseHandler.writeToJson();
                 System.out.println("Which file would you like to see?");
                 try {
-                    for (int i = 0; i < getItemList().size(); i++) {
-                        System.out.println((i+1)+". "+getItemList().get(i));
+                    for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
+                        System.out.println((i+1)+". "+ testCaseHandler.getItemList().get(i));
                     }
                     int uI = readInt("Enter number: ");
                     boolean doNotExit = true;
                     while(doNotExit){
-                        if((uI) > getItemList().size()){
+                        if((uI) > testCaseHandler.getItemList().size()){
                             flush();
-                            for (int i = 0; i < getItemList().size(); i++) {
-                                System.out.println(getItemList().get(i));
+                            for (int i = 0; i < testCaseHandler.getItemList().size(); i++) {
+                                System.out.println(testCaseHandler.getItemList().get(i));
                             }
                             uI = readInt("Invalid input, please Enter Number:");
                         }
@@ -51,7 +51,7 @@ public class testCaseGUI extends testCaseHandler{
                             doNotExit = false;
                         }
                     }
-                    startMenuGUI.path = getItem(uI).toString();
+                    startMenuGUI.path = testCaseHandler.getItem(uI).toString();
                     Image2Array.processImage(startMenuGUI.path);
                     shapeLogic.shapeL(Image2Array.getTranscodedArray());
                     flush();
